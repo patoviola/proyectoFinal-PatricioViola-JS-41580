@@ -10,3 +10,6 @@ background-color: firebrick;
 h1{
     text-align: center;
 }
+form{
+    margin: 20px;
+}

@@ -1,4 +1,6 @@
 //remitente
+
+function datosRemitenteForm(){
 class Remitente {
     constructor(nombre, telefono, direccion){
     this.nombre = nombre
@@ -7,12 +9,13 @@ class Remitente {
     }
 }
 
-var nombreRemitente = prompt("Ingrese nombre de quien envia")
-var telefonoRemitente = prompt("Ingrese telefono del remitente")
-var direccionDeRetiro = prompt("Ingrese direccion de partida")
+let nombreRemitente = document.getElementById("nombreRemitente").value
+let direccionDeRetiro = document.getElementById("direccionDeRetiro").value
+let telefonoRemitente = document.getElementById("telefonoRemitente").value
 
 const remitente1 = new Remitente(nombreRemitente, telefonoRemitente, direccionDeRetiro) 
 console.log(remitente1)
+
 
 let datosRemitente =document.createElement("div")
 datosRemitente.innerHTML = `<h4>Remitente:</h4>
@@ -22,8 +25,10 @@ datosRemitente.innerHTML = `<h4>Remitente:</h4>
     <li>Direccion de Retiro: ${direccionDeRetiro}</li>
 </ul>`
 document.body.appendChild(datosRemitente)
+}
 
 //destinatario
+function datosDestinatarioForm (){
 class Destinatario {
     constructor(nombre, telefono, direccion){
         this.nombre = nombre
@@ -32,14 +37,14 @@ class Destinatario {
     }
 }
 
-var nombreDestinatario = prompt("Ingrese nombre de quien reciba")
-var telefonoDestinatario = prompt("Ingrese telefono de quien recibe")
-var direccionDeEntrega = prompt("Ingrese direccion de destino")
+let nombreDestinatario = document.getElementById("nombreDestinatario").value
+let direccionDeEntrega = document.getElementById("direccionDeEntrega").value
+let telefonoDestinatario = document.getElementById("telefonoDestinatario").value
 
 const destinatario1 = new Destinatario(nombreDestinatario, telefonoDestinatario, direccionDeEntrega)
 console.log(destinatario1)
 
-let datosDestinatario =document.createElement("div")
+let datosDestinatario = document.createElement("div")
 datosDestinatario.innerHTML = `<h4>Destinatario:</h4>
 <ul>
     <li>Nombre Remitente: ${nombreDestinatario}</li>
@@ -47,21 +52,21 @@ datosDestinatario.innerHTML = `<h4>Destinatario:</h4>
     <li>Direccion de Entrega: ${direccionDeEntrega}</li>
 </ul>`
 document.body.appendChild(datosDestinatario)
+}
 
 // Seleccion de Paquete
-const cantidadDeKM = prompt("Indique cantidad de KM") // provisorio
-const tipoDePaquete = prompt("Selecione tipo de paquete: 1: pequeño 2: mediano 3: grande")
 const paquetePequeño = 80
 const paqueteMediano = 90
 const paqueteGrande = 100
 
 function calcularPaquetePequeño(cantidadDeKM, paquetePequeño){
     const pequeño = cantidadDeKM * paquetePequeño;
+    console.dir(cantidadDeKM)
+    console.log(paquetePequeño)
     console.log("El valor del viaje es: $" + pequeño)
     let valorFinal = document.createElement("div")
     valorFinal.innerHTML = `<h3>Valor del Viaje: ${pequeño}</h3>`;
     document.body.appendChild(valorFinal)
-
 }
 
 function calcularPaqueteMediano(cantidadDeKM, paqueteMediano){
@@ -80,7 +85,16 @@ function calcularPaqueteGrande(cantidadDeKM, paqueteGrande){
     document.body.appendChild(valorFinal)
 }
 
-switch (tipoDePaquete) {
+let miFormulario = document.getElementById("formulario")
+miFormulario.addEventListener('submit', cotizar);
+
+function cotizar (e){
+
+    datosRemitenteForm()
+    datosDestinatarioForm()
+    const cantidadDeKM = parseInt(document.getElementById("cantidadDeKM").value)
+    const tipoDePaquete = document.getElementById("tipo").value
+    switch (tipoDePaquete) {
         case "1":
             calcularPaquetePequeño(cantidadDeKM, paquetePequeño);
             break;
@@ -90,6 +104,5 @@ switch (tipoDePaquete) {
         case "3":
             calcularPaqueteGrande(cantidadDeKM, paqueteGrande);
             break;
-        default:
-            alert("Error de paquete")
     }
+}

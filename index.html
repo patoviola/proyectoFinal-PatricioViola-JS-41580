@@ -20,36 +20,39 @@
       </nav>
     <main>
       <h1>Cotizador de Envios</h1>
-      <form action="">
-        <fieldset>
-        <div>
-          <label for="">Nombre y apellido</label>
-          <input type="text">
+      <form id="formulario">
+        <label for="">Nombre remitente:</label>
+        <input type="text" id="nombreRemitente">
+
+        <label for="">Direccion de Retiro:</label>
+        <input type="text" id="direccionDeRetiro">
+
+        <label for="">Telefono:</label>
+        <input type="tel" id="telefonoRemitente"><br>
+
+        <label for="">Nombre destinatario:</label>
+        <input type="text" id="nombreDestinatario">
+        
+        <label for="">Direccion de entrega:</label>
+        <input type="text" id="direccionDeEntrega">
+        
+        <label for="">Telefono:</label>
+        <input type="tel" id="telefonoDestinatario"><br>
+        
+        <label for="">Selecione tipo de Paquete</label>
+        <select name="tipo" id="tipo">
+          <option value="1">Pequeño</option>
+          <option value="2">Mediano</option>
+          <option value="3">Grande</option>
+        </select>
+        
+        <label for="">Cantidad de KM</label>
+        <input type="number" id="cantidadDeKM">
+        
+        <div class="btnCotizar">
+          <button type="button" class="btn btn-danger" value="Enviar" onclick="cotizar()">Cotizar</button>
         </div>
-        <div>
-          <label for="">Telefono del Remitente</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">Direccion de Retiro</label>
-          <input type="text" name="" id="">
-        </div><br>
-        <div>
-          <label for="">Nombre y apellido</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">Telefono del Destinatario</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">Direccion de Entrega</label>
-          <input type="text" name="" id="">
-        </div>
-        <button type="submit">Cotizar</button>
-      </fieldset>
       </form>
-      <div></div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>

@@ -20,6 +20,35 @@
       </nav>
     <main>
       <h1>Cotizador de Envios</h1>
+<!--MODAL  -->
+      <div class="btnCotizar">
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#miModal">Formulario del Solicitante</button>
+      </div>
+      <div>
+        <div class="modal fade" id="miModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Datos del Solicitante</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form action="">
+              <div class="modal-body">
+                <label for="nombreYApellido">Nombre y Apellido:</label>
+                <input type="text" class="form-control" id="nombreYApellidoSoli" name="" value="">
+                <label for="telefono">Telefono:</label>
+                <input type="text" class="form-control" id="telefonoSoli" name="" value="">
+              </div>
+            </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" value="Enviar" data-bs-dismiss="modal"onclick="solicitanteBtn()">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <form id="formulario">
         <label for="">Nombre remitente:</label>
         <input type="text" id="nombreRemitente">

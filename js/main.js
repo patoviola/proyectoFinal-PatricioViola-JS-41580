@@ -106,3 +106,27 @@ function cotizar (e){
             break;
     }
 }
+
+// Solicitante
+function solicitanteForm (){
+    class Solicitante {
+        constructor(nombre, telefono){
+        this.nombre = nombre
+        this.telefono = telefono
+        }
+    }
+let nombreYApellidoSoli = document.getElementById("nombreYApellidoSoli").value
+let telefonoSoli = document.getElementById("telefonoSoli").value
+
+const solicitante1 = new Solicitante (nombreYApellidoSoli, telefonoSoli)
+console.log(solicitante1)
+
+const solicitanteJSON = JSON.stringify(solicitante1);
+localStorage.setItem("Solicitante", solicitanteJSON)
+const solicitanteEnLocalStorage = localStorage.getItem("Solicitante");
+const nuevoSolicitante = JSON.parse(solicitanteEnLocalStorage)
+}
+
+function solicitanteBtn(e){
+    solicitanteForm()
+}

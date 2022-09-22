@@ -61,11 +61,9 @@ const paqueteGrande = 100
 
 function calcularPaquetePequeño(cantidadDeKM, paquetePequeño){
     const pequeño = cantidadDeKM * paquetePequeño;
-    console.dir(cantidadDeKM)
-    console.log(paquetePequeño)
     console.log("El valor del viaje es: $" + pequeño)
     let valorFinal = document.createElement("div")
-    valorFinal.innerHTML = `<h3>Valor del Viaje: ${pequeño}</h3>`;
+    valorFinal.innerHTML = `<h3>Valor del Viaje: $${pequeño}</h3>`;
     document.body.appendChild(valorFinal)
 }
 
@@ -88,8 +86,8 @@ function calcularPaqueteGrande(cantidadDeKM, paqueteGrande){
 let miFormulario = document.getElementById("formulario")
 miFormulario.addEventListener('submit', cotizar);
 
-function cotizar (e){
-
+function cotizar (event){
+    
     datosRemitenteForm()
     datosDestinatarioForm()
     const cantidadDeKM = parseInt(document.getElementById("cantidadDeKM").value)
@@ -105,6 +103,13 @@ function cotizar (e){
             calcularPaqueteGrande(cantidadDeKM, paqueteGrande);
             break;
     }
+    let solicitar = document.createElement("div")
+    solicitar.innerHTML = `<button type="button" class="btn btn-danger" value="Enviar" onclick="soli()">Solicitar</button>`
+    document.body.appendChild(solicitar)
+}
+
+function soli(){
+    swal("Envio Solicitado!", "Su envio a sido solicitado con exito. Enseguida nos comunicaremos usted","success")
 }
 
 // Solicitante

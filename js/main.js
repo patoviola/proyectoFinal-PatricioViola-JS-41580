@@ -86,7 +86,7 @@ function calcularPaqueteGrande(cantidadDeKM, paqueteGrande){
 let miFormulario = document.getElementById("formulario")
 miFormulario.addEventListener('submit', cotizar);
 
-function cotizar (event){
+function cotizar (e){
     
     datosRemitenteForm()
     datosDestinatarioForm()

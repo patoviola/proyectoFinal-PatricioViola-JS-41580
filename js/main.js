@@ -1,3 +1,35 @@
+// Ultimo desafio
+let valorConteiner = document.getElementById("valorConteiner")
+let date = './data.json';
+
+function saberValor (e) {
+    traerValores();
+    }
+
+   function traerValores() {
+    fetch(date)
+      .then((res) => res.json())
+      .then((date) => { crearValores(date)});
+  }
+    
+  function crearValores(valores) {
+    const h2 = document.createElement('div')
+    h2.innerHTML = `<ul>
+    <li>El valor del km por paquete pequeño: $${valores[0].precio}</li>
+    <li>El valor del km por paquete mediano: $${valores[1].precio}</li>
+    <li>El valor del km por paquete grande: $${valores[2].precio}</li>
+    </ul>
+    `;
+    console.log(valores[0].precio);
+    console.log(valores[1].precio);
+    console.log(valores[2].precio);
+    
+
+    valorConteiner.appendChild(h2)
+}
+
+
+
 //remitente
 
 function datosRemitenteForm(){

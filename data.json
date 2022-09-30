@@ -1,0 +1,15 @@
+{
+    "0": {
+        "nombre": "pequeño",
+        "precio": 80
+    },
+    "1": {
+        "nombre": "mediano",
+        "precio": 90
+    },
+    "2": {
+        "nombre": "grande",
+        "precio": 100
+    }
+
+}

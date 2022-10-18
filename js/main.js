@@ -1,8 +1,8 @@
-// Ultimo desafio
+//informacion sobre valores
 let valorConteiner = document.getElementById("valorConteiner")
 let date = './data.json';
 
-function saberValor (e) {
+function saberValor () {
     traerValores();
     }
 
@@ -29,7 +29,6 @@ function saberValor (e) {
 }
 
 
-
 //remitente
 
 function datosRemitenteForm(){
@@ -49,7 +48,7 @@ const remitente1 = new Remitente(nombreRemitente, telefonoRemitente, direccionDe
 console.log(remitente1)
 
 
-let datosRemitente =document.createElement("div")
+let datosRemitente = document.createElement("div")
 datosRemitente.innerHTML = `<h4>Remitente:</h4>
 <ul>
     <li>Nombre Remitente: ${nombreRemitente}</li>

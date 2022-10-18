@@ -17,3 +17,16 @@ form{
 .btnCotizar{
     margin: 20px;
 }
+
+.valoresKM{
+    text-align: center;
+}
+
+#valorConteiner li{
+    text-align: center;
+    list-style: none;
+}
+
+footer{
+    text-align: center;
+}
